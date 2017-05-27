@@ -1,33 +1,29 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import PersonService from '../services/PersonService'
 
 Vue.use(Vuex)
 
-const state = {
-  count: 0,
+const state = {  
   persons: []
 }
 
-const mutations = {
-  INCREMENT (state) {
-    state.count++
-  },
-  DECREMENT (state) {
-    state.count--
-  },
+const mutations = {  
   ADD_PERSON (state, person) {
     state.persons.push(person)
+     PersonService.save(person).then((response) => {
+      console.log('Saved a person', response.data)
+    })
+  },
+  ADD_ALL_PERSON (state, persons) {
+    state.persons = state.persons.concat(persons)
   }
 }
 
-const actions = {
-  incrementAsync ({ commit }) {
-    setTimeout(() => {
-      commit('INCREMENT')
-    }, 200)
-  },
+const actions = {  
   addPerson ({commit}, person) {
     commit('ADD_PERSON', person)
+   
   }
 }
 
