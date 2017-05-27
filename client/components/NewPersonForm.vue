@@ -12,7 +12,7 @@
             <label>Age</label>
             <input type="number" name="age" placeholder="Age" v-model="formData.age">
         </div>        
-        <button class="ui button" type="submit" v-on:click="addToTable()"><i class="add user icon"></i>
+        <button class="ui button" type="button" v-on:click="addToTable()"><i class="add user icon"></i>
 Add person</button>
     </form>
 </template>

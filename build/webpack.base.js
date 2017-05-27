@@ -23,7 +23,7 @@ module.exports = {
     alias: {
       root: path.join(__dirname, '../client'),
       components: path.join(__dirname, '../client/components'),
-      semantic: path.resolve(__dirname, '../node_modules/semantic-ui-css')
+      semantic: path.resolve(__dirname, '../node_modules/semantic-ui-css/semantic.js')
     },
     modules: [
       _.cwd('node_modules'),
