@@ -1,22 +1,19 @@
-import axios from 'axios';
+import axios from 'axios'
 
 export default {
-    urlPrefix : 'http://localhost:8080/persons',
+  urlPrefix: 'http://localhost:8080/persons',
+  getOne (id) {
+    const url = this.urlPrefix + '/' + id
+    return axios.get(url)
+  },
 
-    getOne(id) {
-        let url = this.urlPrefix + '/' + id
-        return axios.get(url)
-    },
+  getAll () {
+    const url = this.urlPrefix
+    return axios.get(url)
+  },
 
-    getAll() {
-        let url = this.urlPrefix
-        return axios.get(url)
-    },
-
-    save(person) {
-        let url = this.urlPrefix
-        return axios.post(url,person)
-    }
-
-
+  save (person) {
+    const url = this.urlPrefix
+    return axios.post(url, person)
+  }
 }

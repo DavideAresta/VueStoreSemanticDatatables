@@ -4,14 +4,14 @@ import PersonService from '../services/PersonService'
 
 Vue.use(Vuex)
 
-const state = {  
+const state = {
   persons: []
 }
 
-const mutations = {  
+const mutations = {
   ADD_PERSON (state, person) {
     state.persons.push(person)
-     PersonService.save(person).then((response) => {
+    PersonService.save(person).then((response) => {
       console.log('Saved a person', response.data)
     })
   },
@@ -20,16 +20,15 @@ const mutations = {
   }
 }
 
-const actions = {  
-  addPerson ({commit}, person) {
+const actions = {
+  addPerson ({ commit }, person) {
     commit('ADD_PERSON', person)
-   
   }
 }
 
 const getters = {
-  persons() {
-    return state.persons;
+  persons () {
+    return state.persons
   }
 }
 

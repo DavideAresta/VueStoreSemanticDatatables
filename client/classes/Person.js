@@ -1,13 +1,13 @@
 export default class Person {
 
-    constructor(firstName = '', lastName = '', age ='') {
-        this.firstName = firstName
-        this.lastName = lastName
-        this.age = age
-    }
+  constructor (firstName = '', lastName = '', age = '') {
+    this.firstName = firstName
+    this.lastName = lastName
+    this.age = age
+  }
 
-    get description() {
-        return this.firstName + ' ' + this.lastName
-    }
+  get description () {
+    return this.firstName + ' ' + this.lastName
+  }
 
 }
