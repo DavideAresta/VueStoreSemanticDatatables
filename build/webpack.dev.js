@@ -9,7 +9,10 @@ const FriendlyErrors = require('friendly-errors-webpack-plugin')
 base.devtool = 'source-map'
 base.plugins.push(
   new webpack.DefinePlugin({
-    'process.env.NODE_ENV': JSON.stringify('development')
+    'process.env': {
+      NODE_ENV: JSON.stringify('development'),
+      API_URL: JSON.stringify('http://localhost:8080/')
+    }
   }),
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NoEmitOnErrorsPlugin(),

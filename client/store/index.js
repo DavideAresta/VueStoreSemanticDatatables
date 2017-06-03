@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+
 import PersonService from '../services/PersonService'
 
 Vue.use(Vuex)

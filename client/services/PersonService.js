@@ -1,19 +1,14 @@
-import axios from 'axios'
+
+import SupportService from './SupportService'
 
 export default {
-  urlPrefix: 'http://localhost:8080/persons',
-  getOne (id) {
-    const url = this.urlPrefix + '/' + id
-    return axios.get(url)
-  },
 
+  resourceURL: 'persons',
   getAll () {
-    const url = this.urlPrefix
-    return axios.get(url)
+    return SupportService.getAll(this.resourceURL)
   },
-
   save (person) {
-    const url = this.urlPrefix
-    return axios.post(url, person)
+    return SupportService.save(this.resourceURL, person)
   }
+
 }

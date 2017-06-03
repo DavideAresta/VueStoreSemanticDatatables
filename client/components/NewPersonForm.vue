@@ -14,10 +14,14 @@
 		</div>
 		<button class="ui button" type="button" v-on:click="addToTable()">
 			<i class="add user icon"></i>Add person</button>
+     <button  class="ui button"  type="button" @click="syncWithServer()">Sync with server</button>
+
 	</form>
 </template>
 <script>
+
 import Person from '../classes/Person'
+import SupportService from '../services/SupportService'
 
 export default {
 	data () {
@@ -30,6 +34,9 @@ export default {
 			let person = this.formData;
 			this.$store.commit('ADD_PERSON', person)
 			this.formData = new Person()
+		},
+		syncWithServer () {
+			SupportService.syncWithServer()
 		}
 	}
 }

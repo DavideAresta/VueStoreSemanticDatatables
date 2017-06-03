@@ -88,5 +88,6 @@ base.stats = {
   chunkOrigins: false,
   modules: false
 }
+base.apiUrl = 'http://localhost:8080/'
 
 module.exports = base

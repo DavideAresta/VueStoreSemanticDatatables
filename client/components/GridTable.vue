@@ -1,10 +1,12 @@
 <template>
-  <table class="ui celled table">
-  </table>
+    <table class="ui celled table">
+    </table>
 </template>
 <script>
 import $ from 'jquery'
-
+import datatables from 'datatables.net'
+import datatablesse from 'datatables.net-se'
+import { mapGetters } from 'vuex'
 import Person from '../classes/Person'
 import PersonService from '../services/PersonService'
 
@@ -17,15 +19,15 @@ export default {
     }
   },
   mounted () {
-    PersonService.getAll().then((response) => {
+    var that = this
+    PersonService.getAll().then(response => {
       var persons = response.data
-      this.persons = []
+      that.persons = []
       persons.forEach(function (element) {
-        this.persons.push(new Person(element.firstName, element.lastName, element.age))
+        that.persons.push(new Person(element.firstName, element.lastName, element.age))        
       }, this)
-
       this.DataTable = $(this.$el).DataTable({
-        data: this.persons,
+        data: that.persons,
         columns: [
           {
             title: 'First Name',
@@ -47,9 +49,6 @@ export default {
         ]
       })
     })
-  },
-  methods: {
-
   }
 }
 </script>
