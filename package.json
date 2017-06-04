@@ -23,6 +23,7 @@
     "babel-runtime": "^6.23.0",
     "datatables.net": "~1.10.15",
     "datatables.net-se": "^1.10.15",
+    "dexie": "^1.5.1",
     "jquery": "^3.2.1",
     "promise-polyfill": "^6.0.2",
     "semantic-ui-css": "^2.2.10",

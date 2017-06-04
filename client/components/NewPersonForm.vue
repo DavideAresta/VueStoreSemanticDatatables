@@ -22,17 +22,21 @@
 
 import Person from '../classes/Person'
 import SupportService from '../services/SupportService'
+import PersonService from '../services/PersonService'
 
 export default {
 	data () {
 		return {
-			formData: new Person()
+			formData: new Person()			
 		}
 	},
 	methods: {
 		addToTable () {
 			let person = this.formData;
 			this.$store.commit('ADD_PERSON', person)
+			var id = this.$store.getters.persons.length
+			person.id = id++;
+			PersonService.save(person)
 			this.formData = new Person()
 		},
 		syncWithServer () {

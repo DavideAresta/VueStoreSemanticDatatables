@@ -4,6 +4,7 @@ export default class Person {
     this.firstName = firstName
     this.lastName = lastName
     this.age = age
+    this.id = null
   }
 
   get description () {

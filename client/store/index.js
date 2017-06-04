@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+
 import PersonService from '../services/PersonService'
 
 Vue.use(Vuex)
@@ -11,12 +12,10 @@ const state = {
 
 const mutations = {
   ADD_PERSON (state, person) {
-    state.persons.push(person)
-    PersonService.save(person).then((response) => {
-      console.log('Saved a person', response.data)
-    })
+    state.persons.push(person)  
+  
   },
-  ADD_ALL_PERSON (state, persons) {
+  ADD_ALL_PERSONS (state, persons) {
     state.persons = state.persons.concat(persons)
   }
 }
@@ -28,7 +27,7 @@ const actions = {
 }
 
 const getters = {
-  persons () {
+  persons () {  
     return state.persons
   }
 }
